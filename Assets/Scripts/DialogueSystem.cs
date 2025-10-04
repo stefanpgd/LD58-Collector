@@ -15,6 +15,8 @@ public class DialogueSystem : MonoBehaviour
 
     [SerializeField] private Sprite[] myEmotes = new Sprite[(int)CharacterEmote.EmoteCount];
 
+    public bool DialogueHasMouseFocus { get; private set; } 
+
     private bool hasDialogue = false;
     private bool inOpeningAnimation = false;
 
@@ -53,11 +55,13 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
-    public void StartDialogue(CharacterEmote emoteToUse)
+    public void StartDialogue(bool blockInput, CharacterEmote emoteToUse)
     {
         hasDialogue = true;
         inOpeningAnimation = true;
         openingTimer = 0.0f;
+
+        DialogueHasMouseFocus = blockInput;
 
         characterImage.sprite = myEmotes[(int)emoteToUse];
         characterImage.gameObject.SetActive(true);
@@ -95,6 +99,7 @@ public class DialogueSystem : MonoBehaviour
     private void CloseDialogue()
     {
         hasDialogue = false;
+        DialogueHasMouseFocus = false;
 
         characterImage.gameObject.SetActive(false);
     }

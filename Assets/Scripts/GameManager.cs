@@ -2,7 +2,6 @@ using UnityEngine;
 
 /// <summary>
 /// Todo:
-/// - Make a DialogueManager that is able to Push a dialogue event
 /// - Make it so that when Dialogue is running, the mouse clicks don't work on Clickables
 /// 
 /// - Have a sprite which follows the mouse 

@@ -74,10 +74,11 @@ public class ClickableObject : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("Click Strength: " + GameManager.Instance.GetClickStrength());
-        Debug.Log("Required Click Strength: " + data.requiredClickStrength);
-
-        if (GameManager.Instance.GetClickStrength() < data.requiredClickStrength)
+        // If we are either:
+        // - Currently in Dialogue with the mouse focus taken
+        // - To weak to click on this object
+        // Then skip the click logic
+        if (DialogueSystem.Instance.DialogueHasMouseFocus || GameManager.Instance.GetClickStrength() < data.requiredClickStrength)
         {
             return;
         }
@@ -125,7 +126,7 @@ public class ClickableObject : MonoBehaviour
 
         if(data.hasDialogue)
         {
-            DialogueSystem.Instance.StartDialogue(data.characterEmote);
+            DialogueSystem.Instance.StartDialogue(true, data.characterEmote);
         }
 
         // Setup the move direction to launch our object into
