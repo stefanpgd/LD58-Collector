@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using UnityEngine;
 
 public class ClickableObject : MonoBehaviour
@@ -121,6 +122,7 @@ public class ClickableObject : MonoBehaviour
         ResourceManager.Instance.AddResource(data.Type);
 
         isCollected = true;
+        DialogueSystem.Instance.StartDialogue();
 
         // Setup the move direction to launch our object into
         moveVelocity = new Vector3(0.0f, 1.0f, 0.0f);
