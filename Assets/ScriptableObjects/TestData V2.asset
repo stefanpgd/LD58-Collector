@@ -17,6 +17,8 @@ MonoBehaviour:
   ClickedSprite: {fileID: 2322389659712592154, guid: bfba947d616015c4e9649d4717356a50, type: 3}
   ClickHealth: 5
   requiredClickStrength: 2
+  hasDialogue: 1
+  characterEmote: 1
   UseClickSprite: 1
   ShakeOnClick: 1
   shakeStrength: 0.2

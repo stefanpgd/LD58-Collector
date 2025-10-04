@@ -19,6 +19,10 @@ public class ClickableData : ScriptableObject
     public int ClickHealth = 3;
     public int requiredClickStrength = 0;
 
+    [Header("Dialogue")]
+    public bool hasDialogue;
+    public CharacterEmote characterEmote;
+
     [Header("Juice")]
     public bool UseClickSprite = false;
     public bool ShakeOnClick = false;
