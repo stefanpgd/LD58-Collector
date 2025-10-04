@@ -127,12 +127,16 @@ TextureImporter:
         width: 212
         height: 38
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline: []
+      outline:
+      - - {x: 106, y: 19}
+        - {x: -106, y: 19}
+        - {x: -106, y: -19}
+        - {x: 106, y: -19}
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 62133f7d65ca7a920800000000000000
       internalID: 3001557165655929126
@@ -149,12 +153,16 @@ TextureImporter:
         width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline: []
+      outline:
+      - - {x: 2, y: 2}
+        - {x: -2, y: 2}
+        - {x: -2, y: -2}
+        - {x: 2, y: -2}
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 4b05d485e8426e3f0800000000000000
       internalID: -871969284064194380
@@ -171,15 +179,67 @@ TextureImporter:
         width: 56
         height: 11
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 28, y: -4.5}
+        - {x: 28, y: 4.5}
+        - {x: 27, y: 5.5}
+        - {x: -27, y: 5.5}
+        - {x: -28, y: 4.5}
+        - {x: -28, y: -4.5}
+        - {x: -27, y: -5.5}
+        - {x: 27, y: -5.5}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8b15b2f250d2ae50800000000000000
+      internalID: 6819241840470203279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DialogueUI_Spritesheet_01_3
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 2
+        width: 90
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f8b15b2f250d2ae50800000000000000
-      internalID: 6819241840470203279
+      spriteID: 6eb84661233fd9144a7d7623ad871ca7
+      internalID: -2046024334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DialogueUI_Spritesheet_01_4
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 3
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c0df22eed943a7479e77fffe56702d9
+      internalID: -731517548
       vertices: []
       indices: 
       edges: []
@@ -201,6 +261,8 @@ TextureImporter:
       DialogueUI_Spritesheet_01_0: 3001557165655929126
       DialogueUI_Spritesheet_01_1: -871969284064194380
       DialogueUI_Spritesheet_01_2: 6819241840470203279
+      DialogueUI_Spritesheet_01_3: -2046024334
+      DialogueUI_Spritesheet_01_4: -731517548
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

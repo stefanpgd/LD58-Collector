@@ -6,6 +6,10 @@ public class ScreenMovement : MonoBehaviour
 {
     [Header("References")]
     public GameObject camera;
+    [SerializeField] public Animator upArrowAnim;
+    [SerializeField] public Animator downArrowAnim;
+    [SerializeField] public Animator leftArrowAnim;
+    [SerializeField] public Animator rightArrowAnim;
 
     [Header("Config")]
     public Vector2 screenResolution;
@@ -49,10 +53,17 @@ public class ScreenMovement : MonoBehaviour
             if (mousePosition.x >= camera.transform.position.x + screenResolution.x - edgeRangeForMovement && camera.transform.position.x <= XBoundaryRight)
             {
                 newCameraPosX = camera.transform.position.x + 1 * multiplier;
+                rightArrowAnim.SetBool("IsMovingRight", true);
             }
             else if (mousePosition.x <= camera.transform.position.x - screenResolution.x + edgeRangeForMovement && camera.transform.position.x >= XBoundaryLeft)
             {
                 newCameraPosX = camera.transform.position.x - 1 * multiplier;
+                leftArrowAnim.SetBool("IsMovingLeft", true);
+            }
+            else
+            {
+                rightArrowAnim.SetBool("IsMovingRight", false);
+                leftArrowAnim.SetBool("IsMovingLeft", false);
             }
 
             camera.transform.position = new Vector3(newCameraPosX, camera.transform.position.y, camera.transform.position.z);
@@ -65,10 +76,17 @@ public class ScreenMovement : MonoBehaviour
             if (mousePosition.y >= camera.transform.position.y + screenResolution.y - edgeRangeForMovement && camera.transform.position.y <= YBoundaryUp)
             {
                 newCameraPosY = camera.transform.position.y + 1 * multiplier;
+                upArrowAnim.SetBool("IsMovingUp", true);
             }
             else if (mousePosition.y <= camera.transform.position.y - screenResolution.y + edgeRangeForMovement && camera.transform.position.y >= YBoundaryDown)
             {
                 newCameraPosY = camera.transform.position.y - 1 * multiplier;
+                downArrowAnim.SetBool("IsMovingDown", true);
+            }
+            else
+            {
+                upArrowAnim.SetBool("IsMovingUp", false);
+                downArrowAnim.SetBool("IsMovingDown", false);
             }
 
             camera.transform.position = new Vector3(camera.transform.position.x, newCameraPosY, camera.transform.position.z);
