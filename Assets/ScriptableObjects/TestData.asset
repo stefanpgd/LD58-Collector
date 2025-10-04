@@ -13,13 +13,22 @@ MonoBehaviour:
   m_Name: TestData
   m_EditorClassIdentifier: 
   Type: 0
-  DefaultSprite: {fileID: 0}
-  ClickedSprite: {fileID: 0}
+  DefaultSprite: {fileID: 8308148680191640472, guid: bfba947d616015c4e9649d4717356a50, type: 3}
+  ClickedSprite: {fileID: 2322389659712592154, guid: bfba947d616015c4e9649d4717356a50, type: 3}
   ClickHealth: 5
-  UseClickSprite: 0
-  ClickSpriteDuration: 0.1
-  ShakeOnClick: 0
-  shakeStrength: 0.1
+  requiredClickStrength: 0
+  UseClickSprite: 1
+  ShakeOnClick: 1
+  shakeStrength: 0.2
   shakeDuration: 0.1
-  hitSFXs: []
-  collectSFXs: []
+  collectInitialStrength: 17
+  collectGravityDag: 17.5
+  collectRotationSpeed: 90
+  ClickSFXVolume: 0.324
+  CollectSFXVolume: 0.5
+  clickSFXs:
+  - {fileID: 8300000, guid: ff75dddabd8142840b15523aca07d835, type: 3}
+  - {fileID: 8300000, guid: ff46fad07a8665544832c2f84322ad5f, type: 3}
+  - {fileID: 8300000, guid: 61cbaee26930abd4bb7456c85a58a9da, type: 3}
+  collectSFXs:
+  - {fileID: 8300000, guid: a0f9cfcb1cc940c4ca3c87b8075becdc, type: 3}

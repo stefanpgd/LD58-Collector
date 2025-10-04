@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ObjectType
+public enum ClickableType
 {
     Cat,
     Environment,
@@ -13,20 +13,25 @@ public enum ObjectType
 public class ClickableData : ScriptableObject
 {
     [Header("Default")]
-    public ObjectType Type;
+    public ClickableType Type;
     public Sprite DefaultSprite;
     public Sprite ClickedSprite;
     public int ClickHealth = 3;
+    public int requiredClickStrength = 0;
 
     [Header("Juice")]
     public bool UseClickSprite = false;
-    public float ClickSpriteDuration = 0.1f;
-
     public bool ShakeOnClick = false;
     public float shakeStrength = 0.1f;
     public float shakeDuration = 0.1f;
 
+    public float collectInitialStrength = 17.0f;
+    public float collectGravityDag = 17.5f;
+    public float collectRotationSpeed = 90.0f;
+
     [Header("Audio")]
-    public List<AudioClip> hitSFXs = new List<AudioClip>();
+    [Range(0.0f, 1.0f)] public float ClickSFXVolume = 0.5f;
+    [Range(0.0f, 1.0f)] public float CollectSFXVolume = 0.5f;
+    public List<AudioClip> clickSFXs = new List<AudioClip>();
     public List<AudioClip> collectSFXs = new List<AudioClip>();
 }
