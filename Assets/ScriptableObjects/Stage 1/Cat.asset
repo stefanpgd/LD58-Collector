@@ -18,15 +18,33 @@ MonoBehaviour:
   ClickHealth: 3
   requiredClickStrength: 0
   DialogueEvents:
-  - Dialogue: Wow, you actually found Mikkel. Okay four more to go!
+  - Dialogue: 'Wow! You actually managed to find Mikkel! '
     EmoteToUse: 0
     BlockInput: 0
     requiredAmountOfType: 1
     UpdateGameState: 0
     NewGameState: 0
     characterShakes: 1
-    shakeDuration: 0.8
-    shakeStrength: 5
+    shakeDuration: 0.25
+    shakeStrength: 6
+  - Dialogue: Okay, if I remembered correctly there should be four more left.
+    EmoteToUse: 1
+    BlockInput: 0
+    requiredAmountOfType: 1
+    UpdateGameState: 0
+    NewGameState: 0
+    characterShakes: 0
+    shakeDuration: 0
+    shakeStrength: 0
+  - Dialogue: I now have full confidence you can get this done!
+    EmoteToUse: 3
+    BlockInput: 0
+    requiredAmountOfType: 1
+    UpdateGameState: 1
+    NewGameState: 1
+    characterShakes: 0
+    shakeDuration: 0
+    shakeStrength: 0
   - Dialogue: Just one more to go! He should be near the pond.
     EmoteToUse: 0
     BlockInput: 0

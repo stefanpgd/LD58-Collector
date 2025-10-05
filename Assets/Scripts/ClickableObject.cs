@@ -136,17 +136,24 @@ public class ClickableObject : MonoBehaviour
 
         if(data.DialogueEvents.Count > 0) 
         {
+            bool pushedDialogue = false;
             foreach (DialogueEvent dialogue in data.DialogueEvents)
             {
                 if (ResourceManager.Instance.GetResource(data.Type) == dialogue.requiredAmountOfType)
                 {
-                    DialogueSystem.Instance.StartDialogue(dialogue);
+                    pushedDialogue = true;
+                    DialogueSystem.Instance.PushDialogueEvent(dialogue);
 
                     if(dialogue.UpdateGameState)
                     {
                         GameManager.Instance.ProcessGameState(dialogue.NewGameState);
                     }
                 }
+            }
+
+            if(pushedDialogue)
+            {
+                DialogueSystem.Instance.StartDialogue();
             }
         }
         
