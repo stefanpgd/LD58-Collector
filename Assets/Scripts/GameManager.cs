@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -12,7 +13,7 @@ using UnityEngine;
 
 public enum GameState
 {
-    // Onboarding,
+    GameStart,
     CollectFourCats,
     SpawnCatInPond,
 }
@@ -22,15 +23,43 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// This should manage how the player enters onboarding -> Stage 1..2..3 so forth
     /// </summary>
-   
     public static GameManager Instance;
     private GameState currentGameState;
+
+    [SerializeField] private float gameStartTimer = 3.0f;
+    [SerializeField] public List<DialogueEvent> onboardingDialogue = new List<DialogueEvent>();
 
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
+        }
+
+        currentGameState = GameState.GameStart;
+    }
+
+    private void Update()
+    {
+        switch (currentGameState)
+        {
+            case GameState.GameStart:
+                gameStartTimer -= Time.deltaTime;
+                if (gameStartTimer < 0)
+                {
+                    for(int i = 0; i < onboardingDialogue.Count; i++)
+                    {
+                        DialogueSystem.Instance.PushDialogueEvent(onboardingDialogue[i]);
+                    }
+
+                    DialogueSystem.Instance.StartDialogue();
+                    currentGameState = GameState.CollectFourCats;
+                }
+                break;
+
+            default:
+
+                break;
         }
     }
 
@@ -43,10 +72,10 @@ public class GameManager : MonoBehaviour
     {
         currentGameState = state;
 
-        switch(state) 
+        switch (state)
         {
             case GameState.SpawnCatInPond:
-                    break;
+                break;
 
             default: Debug.LogError("GameState not set up yet.."); break;
         }

@@ -36,7 +36,7 @@ MonoBehaviour:
     characterShakes: 0
     shakeDuration: 0
     shakeStrength: 0
-  - Dialogue: I now have full confidence you can get this done!
+  - Dialogue: Let's see if my choice to pick you will pay off.
     EmoteToUse: 3
     BlockInput: 1
     requiredAmountOfType: 1

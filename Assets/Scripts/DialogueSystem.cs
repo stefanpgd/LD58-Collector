@@ -10,6 +10,8 @@ public enum CharacterEmote
     Suspicious,
     Flabbergasted,
     LookingAway,
+    Sad,
+    Annoyed,
     EmoteCount // use this to easily keep track of the amount of emotes
 }
 
@@ -83,6 +85,7 @@ public class DialogueSystem : MonoBehaviour
         dialogueStartAnchoredPosition = dialogueParent.anchoredPosition;
         characterStartAnchoredPosition = characterImage.rectTransform.anchoredPosition;
 
+        DialogueHasMouseFocus = true;
         dialogueParent.gameObject.SetActive(false);
     }
 

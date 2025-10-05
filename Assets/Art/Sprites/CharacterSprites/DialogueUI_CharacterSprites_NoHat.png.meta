@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      DialogueUI_CharacterSprites_NoHat_0: 6448621876778120975
+      DialogueUI_CharacterSprites_NoHat_1: 8617699139976068166
+      DialogueUI_CharacterSprites_NoHat_10: -6072762119118409910
+      DialogueUI_CharacterSprites_NoHat_11: -3027508064517836157
+      DialogueUI_CharacterSprites_NoHat_2: 575383699968271981
+      DialogueUI_CharacterSprites_NoHat_3: 4892007701323330558
+      DialogueUI_CharacterSprites_NoHat_4: 8882205251745224346
+      DialogueUI_CharacterSprites_NoHat_5: -2638371456403843412
+      DialogueUI_CharacterSprites_NoHat_6: -8147225261860575943
+      DialogueUI_CharacterSprites_NoHat_7: 8493366791322893706
+      DialogueUI_CharacterSprites_NoHat_8: 6514983898669699631
+      DialogueUI_CharacterSprites_NoHat_9: -4417728719469936209
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

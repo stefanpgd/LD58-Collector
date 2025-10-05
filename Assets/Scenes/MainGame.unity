@@ -2068,6 +2068,8 @@ MonoBehaviour:
   - {fileID: 3595613106452547147, guid: 5bb611e4e74e07344a15245eeac9ff86, type: 3}
   - {fileID: 9079912091664169142, guid: 5bb611e4e74e07344a15245eeac9ff86, type: 3}
   - {fileID: -601166468944673997, guid: 5bb611e4e74e07344a15245eeac9ff86, type: 3}
+  - {fileID: 50972953, guid: 5bb611e4e74e07344a15245eeac9ff86, type: 3}
+  - {fileID: 209408671, guid: 5bb611e4e74e07344a15245eeac9ff86, type: 3}
 --- !u!114 &485014101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2113,6 +2115,92 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34359ecfb3a1bf42aade4393cfce561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameStartTimer: 3
+  onboardingDialogue:
+  - Dialogue: Hey, you! Come a bit closer.. yes yes.
+    EmoteToUse: 0
+    BlockInput: 1
+    requiredAmountOfType: 0
+    UpdateGameState: 0
+    NewGameState: 0
+    characterShakes: 0
+    shakeDuration: 0
+    shakeStrength: 0
+  - Dialogue: Mhm.. yeah you don't look too stupid..
+    EmoteToUse: 1
+    BlockInput: 1
+    requiredAmountOfType: 0
+    UpdateGameState: 0
+    NewGameState: 0
+    characterShakes: 1
+    shakeDuration: 0.3
+    shakeStrength: 3
+  - Dialogue: I've a bit of a problem.. my cats have escaped. They ran into the city.
+    EmoteToUse: 3
+    BlockInput: 1
+    requiredAmountOfType: 0
+    UpdateGameState: 0
+    NewGameState: 0
+    characterShakes: 0
+    shakeDuration: 0.3
+    shakeStrength: 3
+  - Dialogue: And as you can imagine, a good looking and powerful mage like me is
+      too busy for this sort of thing.
+    EmoteToUse: 5
+    BlockInput: 1
+    requiredAmountOfType: 0
+    UpdateGameState: 0
+    NewGameState: 0
+    characterShakes: 1
+    shakeDuration: 0.3
+    shakeStrength: 4
+  - Dialogue: So you have the privilege to solve this for me!
+    EmoteToUse: 4
+    BlockInput: 1
+    requiredAmountOfType: 0
+    UpdateGameState: 0
+    NewGameState: 0
+    characterShakes: 0
+    shakeDuration: 0
+    shakeStrength: 0
+  - Dialogue: Of course, I'll help you a little. Since you can't easily levitate
+      like me.
+    EmoteToUse: 5
+    BlockInput: 1
+    requiredAmountOfType: 0
+    UpdateGameState: 0
+    NewGameState: 0
+    characterShakes: 0
+    shakeDuration: 0
+    shakeStrength: 0
+  - Dialogue: I will use my magic on you. That will allow you to collect my cats
+      from a distance!
+    EmoteToUse: 0
+    BlockInput: 1
+    requiredAmountOfType: 0
+    UpdateGameState: 0
+    NewGameState: 0
+    characterShakes: 0
+    shakeDuration: 0.3
+    shakeStrength: 3
+  - Dialogue: 'All you have to do is give them a poke a few times. That''s it. '
+    EmoteToUse: 5
+    BlockInput: 1
+    requiredAmountOfType: 0
+    UpdateGameState: 0
+    NewGameState: 0
+    characterShakes: 0
+    shakeDuration: 0
+    shakeStrength: 0
+  - Dialogue: Go ahead, try it out.
+    EmoteToUse: 5
+    BlockInput: 1
+    requiredAmountOfType: 0
+    UpdateGameState: 0
+    NewGameState: 0
+    characterShakes: 0
+    shakeDuration: 0
+    shakeStrength: 0
 --- !u!4 &485014104
 Transform:
   m_ObjectHideFlags: 0
@@ -8668,8 +8756,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 8
+  m_fontSizeBase: 8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
