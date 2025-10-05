@@ -103,10 +103,10 @@ TextureImporter:
       name: House_A_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 181
-        height: 140
+        x: 2
+        y: 54
+        width: 141
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,6 +117,50 @@ TextureImporter:
       bones: []
       spriteID: e07406d6d4957ba70800000000000000
       internalID: 8842634582447638286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: House_A_1
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 78
+        width: 32
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4e0329366d8121428ead80062422cce
+      internalID: -2005040243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: House_A_2
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 139
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 584452a6fd4a39b49a574ad42c3f9c13
+      internalID: 825761441
       vertices: []
       indices: 
       edges: []
@@ -136,6 +180,8 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       House_A_0: 8842634582447638286
+      House_A_1: -2005040243
+      House_A_2: 825761441
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
