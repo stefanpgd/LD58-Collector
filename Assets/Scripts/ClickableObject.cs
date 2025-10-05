@@ -8,7 +8,7 @@ public class ClickableObject : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
 
     private bool isShaking;
-    private float shakeTimer; 
+    private float shakeTimer;
 
     private bool useClickSprite;
     private Vector3 startPosition;
@@ -29,16 +29,16 @@ public class ClickableObject : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0))
         {
-            if(useClickSprite)
+            if (useClickSprite)
             {
                 useClickSprite = false;
                 spriteRenderer.sprite = data.DefaultSprite;
             }
         }
 
-        if(isShaking)
+        if (isShaking)
         {
             Vector3 shakePosition = startPosition;
             Vector3 shakeDirection = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), 0.0f);
@@ -48,14 +48,14 @@ public class ClickableObject : MonoBehaviour
             transform.position = shakePosition;
 
             shakeTimer -= Time.deltaTime;
-            if(shakeTimer <= 0.0f)
+            if (shakeTimer <= 0.0f)
             {
                 isShaking = false;
-                transform.position = startPosition; 
+                transform.position = startPosition;
             }
         }
 
-        if(isCollected)
+        if (isCollected)
         {
             transform.position += moveVelocity * Time.deltaTime;
             moveVelocity += (new Vector3(0.0f, -1.0f, 0.0f) * data.collectGravityDag) * Time.deltaTime;
@@ -65,9 +65,9 @@ public class ClickableObject : MonoBehaviour
             transform.localEulerAngles = currentRot;
 
             timeUntilRemove -= Time.deltaTime;
-            if(timeUntilRemove < 0.0f) 
+            if (timeUntilRemove < 0.0f)
             {
-                Destroy(gameObject); 
+                Destroy(gameObject);
             }
         }
     }
@@ -97,9 +97,9 @@ public class ClickableObject : MonoBehaviour
             AudioManager.Instance.PlaySFXFromList(data.clickSFXs, data.ClickSFXVolume);
         }
 
-        if(data.UseClickSprite)
+        if (data.UseClickSprite)
         {
-            if(data.ClickedSprite != null)
+            if (data.ClickedSprite != null)
             {
                 useClickSprite = true;
                 spriteRenderer.sprite = data.ClickedSprite;
@@ -110,7 +110,7 @@ public class ClickableObject : MonoBehaviour
             }
         }
 
-        if(data.ShakeOnClick)
+        if (data.ShakeOnClick)
         {
             isShaking = true;
             shakeTimer = data.shakeDuration;
@@ -124,14 +124,20 @@ public class ClickableObject : MonoBehaviour
 
         isCollected = true;
 
-        if(data.hasDialogue)
+        if(data.DialogueEvents.Count > 0) 
         {
-            DialogueSystem.Instance.StartDialogue(true, data.characterEmote);
+            foreach (DialogueEvent dialogue in data.DialogueEvents)
+            {
+                if (ResourceManager.Instance.GetResource(data.Type) == dialogue.requiredAmountOfType)
+                {
+                    DialogueSystem.Instance.StartDialogue(dialogue);
+                }
+            }
         }
-
+        
         // Setup the move direction to launch our object into
         moveVelocity = new Vector3(0.0f, 1.0f, 0.0f);
         moveVelocity.x = Random.Range(-0.6f, 0.6f);
-        moveVelocity = moveVelocity.normalized * data.collectInitialStrength; 
+        moveVelocity = moveVelocity.normalized * data.collectInitialStrength;
     }
 }

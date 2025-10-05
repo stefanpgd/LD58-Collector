@@ -1,17 +1,32 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
+using UnityEditor.Rendering;
+using System;
 
 public enum CharacterEmote
 {
     Smile,
     Suspicious,
+    Flabbergasted,
     EmoteCount // use this to easily keep track of the amount of emotes
+}
+
+[Serializable]
+public struct DialogueEvent
+{
+    [TextArea] public string Dialogue;
+    public CharacterEmote EmoteToUse;
+    public bool BlockInput;
+
+    public int requiredAmountOfType;
 }
 
 public class DialogueSystem : MonoBehaviour
 {
     [SerializeField] private UnityEngine.UI.Image characterImage;
     [SerializeField] private float openingTransitionSpeed = 2.0f;
+    [SerializeField] private TextMeshProUGUI dialogueText;
 
     [SerializeField] private Sprite[] myEmotes = new Sprite[(int)CharacterEmote.EmoteCount];
 
@@ -55,15 +70,16 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
-    public void StartDialogue(bool blockInput, CharacterEmote emoteToUse)
+    public void StartDialogue(DialogueEvent dialogueEvent)
     {
         hasDialogue = true;
         inOpeningAnimation = true;
         openingTimer = 0.0f;
 
-        DialogueHasMouseFocus = blockInput;
+        dialogueText.text = dialogueEvent.Dialogue;
+        DialogueHasMouseFocus = dialogueEvent.BlockInput;
 
-        characterImage.sprite = myEmotes[(int)emoteToUse];
+        characterImage.sprite = myEmotes[(int)dialogueEvent.EmoteToUse];
         characterImage.gameObject.SetActive(true);
     }
 
@@ -72,7 +88,6 @@ public class DialogueSystem : MonoBehaviour
         if (inOpeningAnimation)
         {
             float currentY = Mathf.SmoothStep(startY, targetY, openingTimer);
-            Debug.Log("Opening Timer: " + openingTimer + " & Lerp Result: " + currentY);
 
             Vector3 currentChatPosition = characterImage.rectTransform.anchoredPosition;
             currentChatPosition.y = currentY;

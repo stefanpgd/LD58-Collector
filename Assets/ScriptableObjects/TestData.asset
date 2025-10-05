@@ -17,8 +17,15 @@ MonoBehaviour:
   ClickedSprite: {fileID: 2322389659712592154, guid: bfba947d616015c4e9649d4717356a50, type: 3}
   ClickHealth: 5
   requiredClickStrength: 0
-  hasDialogue: 1
-  characterEmote: 0
+  DialogueEvents:
+  - Dialogue: Are you sure you are up for the task???
+    EmoteToUse: 1
+    BlockInput: 0
+    requiredAmountOfType: 1
+  - Dialogue: Yes! Get rid of all those brown cats. They are so annoying
+    EmoteToUse: 0
+    BlockInput: 0
+    requiredAmountOfType: 2
   UseClickSprite: 1
   ShakeOnClick: 1
   shakeStrength: 0.2

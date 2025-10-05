@@ -20,8 +20,7 @@ public class ClickableData : ScriptableObject
     public int requiredClickStrength = 0;
 
     [Header("Dialogue")]
-    public bool hasDialogue;
-    public CharacterEmote characterEmote;
+    [SerializeField] public List<DialogueEvent> DialogueEvents = new List<DialogueEvent>();
 
     [Header("Juice")]
     public bool UseClickSprite = false;

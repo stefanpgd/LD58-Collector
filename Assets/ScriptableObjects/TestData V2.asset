@@ -17,8 +17,11 @@ MonoBehaviour:
   ClickedSprite: {fileID: 2322389659712592154, guid: bfba947d616015c4e9649d4717356a50, type: 3}
   ClickHealth: 5
   requiredClickStrength: 2
-  hasDialogue: 1
-  characterEmote: 1
+  DialogueEvents:
+  - Dialogue: NO! No tthe grey ones! Those are my price winning cats ,_,
+    EmoteToUse: 2
+    BlockInput: 0
+    requiredAmountOfType: 4
   UseClickSprite: 1
   ShakeOnClick: 1
   shakeStrength: 0.2
