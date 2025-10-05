@@ -22,10 +22,20 @@ MonoBehaviour:
     EmoteToUse: 0
     BlockInput: 0
     requiredAmountOfType: 1
+    UpdateGameState: 0
+    NewGameState: 0
+    characterShakes: 1
+    shakeDuration: 0.8
+    shakeStrength: 5
   - Dialogue: Just one more to go! He should be near the pond.
     EmoteToUse: 0
     BlockInput: 0
     requiredAmountOfType: 4
+    UpdateGameState: 1
+    NewGameState: 1
+    characterShakes: 0
+    shakeDuration: 0
+    shakeStrength: 0
   UseClickSprite: 1
   ShakeOnClick: 1
   shakeStrength: 0.1

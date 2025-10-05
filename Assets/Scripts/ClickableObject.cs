@@ -74,6 +74,11 @@ public class ClickableObject : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if(isCollected) // shouldn't process click logic anymore
+        {
+            return;
+        }    
+
         // If we are either:
         // - Currently in Dialogue with the mouse focus taken
         // - To weak to click on this object
@@ -119,13 +124,15 @@ public class ClickableObject : MonoBehaviour
 
     void CollectLogic()
     {
-        if(data.collectSFXs.Count > 0)
+        isCollected = true;
+        spriteRenderer.sortingOrder = 99;
+
+        ResourceManager.Instance.AddResource(data.Type);
+
+        if (data.collectSFXs.Count > 0)
         {
             AudioManager.Instance.PlaySFXFromList(data.collectSFXs, data.CollectSFXVolume); // Send message to ResourceManager 
         }
-
-        ResourceManager.Instance.AddResource(data.Type);
-        isCollected = true;
 
         if(data.DialogueEvents.Count > 0) 
         {
@@ -134,6 +141,11 @@ public class ClickableObject : MonoBehaviour
                 if (ResourceManager.Instance.GetResource(data.Type) == dialogue.requiredAmountOfType)
                 {
                     DialogueSystem.Instance.StartDialogue(dialogue);
+
+                    if(dialogue.UpdateGameState)
+                    {
+                        GameManager.Instance.ProcessGameState(dialogue.NewGameState);
+                    }
                 }
             }
         }

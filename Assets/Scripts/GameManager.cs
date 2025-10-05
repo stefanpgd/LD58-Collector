@@ -10,6 +10,13 @@ using UnityEngine;
 /// - Make a click-unclick state for the mouse sprite
 /// </summary>
 
+public enum GameState
+{
+    // Onboarding,
+    CollectFourCats,
+    SpawnCatInPond,
+}
+
 public class GameManager : MonoBehaviour
 {
     /// <summary>
@@ -17,6 +24,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
    
     public static GameManager Instance;
+    private GameState currentGameState;
 
     private void Awake()
     {
@@ -31,15 +39,16 @@ public class GameManager : MonoBehaviour
         return ResourceManager.Instance.TotalResourcesCollected();
     }
 
-
-    void Start()
+    public void ProcessGameState(GameState state)
     {
-        
-    }
+        currentGameState = state;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        switch(state) 
+        {
+            case GameState.SpawnCatInPond:
+                    break;
+
+            default: Debug.LogError("GameState not set up yet.."); break;
+        }
     }
 }
