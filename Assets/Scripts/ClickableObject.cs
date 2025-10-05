@@ -119,9 +119,12 @@ public class ClickableObject : MonoBehaviour
 
     void CollectLogic()
     {
-        AudioManager.Instance.PlaySFXFromList(data.collectSFXs, data.CollectSFXVolume); // Send message to ResourceManager 
-        ResourceManager.Instance.AddResource(data.Type);
+        if(data.collectSFXs.Count > 0)
+        {
+            AudioManager.Instance.PlaySFXFromList(data.collectSFXs, data.CollectSFXVolume); // Send message to ResourceManager 
+        }
 
+        ResourceManager.Instance.AddResource(data.Type);
         isCollected = true;
 
         if(data.DialogueEvents.Count > 0) 
