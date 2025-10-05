@@ -6,6 +6,8 @@ public class ResourceManager : MonoBehaviour
     // Add int for each type... //
     [SerializeField] private int catsCollected = 0;
     [SerializeField] private int catsWithFishCollected = 0;
+    [SerializeField] private int barrelsCollected = 0;
+
     [SerializeField] private int totalCollected = 0;
 
     public static ResourceManager Instance;
@@ -24,6 +26,7 @@ public class ResourceManager : MonoBehaviour
         {
             case ClickableType.Cat: catsCollected++; break;
             case ClickableType.CatWithFish: catsWithFishCollected++; break;
+            case ClickableType.Barrels: barrelsCollected++; break;
             default: Debug.LogError("TYPE NOT SETUP!!!"); break;
         }
 
@@ -36,6 +39,7 @@ public class ResourceManager : MonoBehaviour
         {
             case ClickableType.Cat: return catsCollected;
             case ClickableType.CatWithFish: return catsWithFishCollected;
+            case ClickableType.Barrels: return barrelsCollected;
             default: Debug.LogError("TYPE NOT SETUP!!!"); return -1;
         }
     }

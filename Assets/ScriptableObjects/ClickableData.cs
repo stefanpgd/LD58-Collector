@@ -5,6 +5,7 @@ public enum ClickableType
 {
     Cat,
     CatWithFish,
+    Barrels,
     Environment,
     UI,
     // so forth //

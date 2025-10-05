@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6862a9ce943af2f40a218a2e6e15bd8e, type: 3}
+  m_Name: Barrel
+  m_EditorClassIdentifier: 
+  Type: 2
+  DefaultSprite: {fileID: -8971287790025223389, guid: 02b268a0a94c92e448aae9447a066d0b, type: 3}
+  ClickedSprite: {fileID: 0}
+  ClickHealth: 10
+  requiredClickStrength: 5
+  DialogueEvents:
+  - Dialogue: WHAAAAAT!
+    EmoteToUse: 2
+    BlockInput: 1
+    requiredAmountOfType: 1
+    UpdateGameState: 0
+    NewGameState: 0
+    characterShakes: 1
+    shakeDuration: 0.5
+    shakeStrength: 7
+  - Dialogue: Haha.. ha. okay uh so it seems that your magical powers to collect
+      have grown.
+    EmoteToUse: 4
+    BlockInput: 1
+    requiredAmountOfType: 1
+    UpdateGameState: 0
+    NewGameState: 0
+    characterShakes: 0
+    shakeDuration: 0
+    shakeStrength: 0
+  - Dialogue: And that they grow with.. every.. thing you collect.
+    EmoteToUse: 4
+    BlockInput: 1
+    requiredAmountOfType: 1
+    UpdateGameState: 0
+    NewGameState: 0
+    characterShakes: 0
+    shakeDuration: 0
+    shakeStrength: 0
+  - Dialogue: Nothing to worry about I can fix this..
+    EmoteToUse: 5
+    BlockInput: 1
+    requiredAmountOfType: 1
+    UpdateGameState: 0
+    NewGameState: 0
+    characterShakes: 0
+    shakeDuration: 0
+    shakeStrength: 0
+  - Dialogue: Just.. let me think. Don't you dare click on more barrels.
+    EmoteToUse: 1
+    BlockInput: 1
+    requiredAmountOfType: 1
+    UpdateGameState: 0
+    NewGameState: 0
+    characterShakes: 0
+    shakeDuration: 0
+    shakeStrength: 0
+  UseClickSprite: 0
+  ShakeOnClick: 1
+  shakeStrength: 0.1
+  shakeDuration: 0.1
+  collectInitialStrength: 5
+  collectGravityDag: 22
+  collectRotationSpeed: 45
+  ClickSFXVolume: 0.119
+  CollectSFXVolume: 0.362
+  clickSFXs:
+  - {fileID: 8300000, guid: edd07ae2d485ec147989c7639277f77e, type: 3}
+  - {fileID: 8300000, guid: f10ea0af8fee8114d9c4c86699bc1745, type: 3}
+  - {fileID: 8300000, guid: c62bfe1720ccec8418a78bfa6bd721ed, type: 3}
+  - {fileID: 8300000, guid: 35b789aa1ec69254485108cfdb911310, type: 3}
+  - {fileID: 8300000, guid: a2f5ddb35c7362549ab65deed2e1a61f, type: 3}
+  collectSFXs:
+  - {fileID: 8300000, guid: 1ff0ae378fd25dd47a49fcfad7b83e64, type: 3}
+  - {fileID: 8300000, guid: 2c6b94912a8f96149bc2aa240ef5c0b5, type: 3}
+  - {fileID: 8300000, guid: 33f7826215b196d4b9d6fb22da05414f, type: 3}
