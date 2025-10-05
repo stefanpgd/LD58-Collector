@@ -3234,6 +3234,8 @@ MonoBehaviour:
   cursorSprites:
   - {fileID: 8788321149091161163, guid: 5c77395ab438ed74a86dbaf90dc89446, type: 3}
   - {fileID: -8161174458054690323, guid: 5c77395ab438ed74a86dbaf90dc89446, type: 3}
+  delay: 0.3
+  cursorSizeMultiplier: 1.05
 --- !u!4 &863793977
 Transform:
   m_ObjectHideFlags: 0

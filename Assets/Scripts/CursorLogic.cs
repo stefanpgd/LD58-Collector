@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -7,6 +8,10 @@ public class CursorLogic : MonoBehaviour
     public SpriteRenderer cursorSpriteObject;
     public Animator cursorAnim;
     public Sprite[] cursorSprites;
+    public float delay = 0.3f;
+    public float cursorSizeMultiplier = 2f;
+    int currentClickStrength;
+    int savedClickStrength;
 
     // follow mouse
 
@@ -19,6 +24,7 @@ public class CursorLogic : MonoBehaviour
         // hide default cursor
         Cursor.visible = false;
         cursorSpriteObject.sprite = cursorSprites[0];
+        currentClickStrength = 0;
 
     }
 
@@ -33,10 +39,28 @@ public class CursorLogic : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Click();
+
+            currentClickStrength = GameManager.Instance.GetClickStrength();
+
+            if (currentClickStrength > savedClickStrength)
+            {
+                Debug.Log(currentClickStrength + " / " + savedClickStrength);
+                StartCoroutine(IncreaseCursorSize(cursorSizeMultiplier, delay));
+                
+                savedClickStrength ++;
+                
+            }
+
+            else if (currentClickStrength == savedClickStrength)
+                return;
+
+            else if (currentClickStrength < savedClickStrength)
+                Debug.LogWarning("Cursor is using a larger clickStrength value than the manager");
+        
         }
         else if (Input.GetMouseButtonUp(0))
         {
-            ResetCursor();    
+            ResetCursor();
         }
     }
 
@@ -49,6 +73,13 @@ public class CursorLogic : MonoBehaviour
     void ResetCursor()
     {
         cursorSpriteObject.sprite = cursorSprites[0];
-        cursorAnim.SetBool("isMouseDown", false);    
-    } 
+        cursorAnim.SetBool("isMouseDown", false);
+    }
+
+    private IEnumerator IncreaseCursorSize(float cursorSizeMultiplier, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        transform.localScale = new Vector3(transform.localScale.x * cursorSizeMultiplier, transform.localScale.y * cursorSizeMultiplier, transform.localScale.z);
+
+    }
 }
