@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: d057e8397f9a31444af0d387845c8c08
+guid: fece988f37aaa424289c8decd90bf077
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8842634582447638286
-    second: House_A_0
+      213: -376281550786902895
+    second: House_B_Base_0
+  - first:
+      213: 501705913228850304
+    second: House_B_Base_1
+  - first:
+      213: 8828427968970717664
+    second: House_B_Base_2
+  - first:
+      213: 9118804511837629358
+    second: House_B_Base_3
+  - first:
+      213: -7969674346648606323
+    second: House_B_Base_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +112,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: House_A_0
+      name: House_B_Base_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 181
-        height: 140
+        x: 6
+        y: 122
+        width: 52
+        height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e07406d6d4957ba70800000000000000
-      internalID: 8842634582447638286
+      spriteID: 19440d55ced27caf0800000000000000
+      internalID: -376281550786902895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: House_B_Base_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 121
+        width: 81
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 084f7b3beda66f600800000000000000
+      internalID: 501705913228850304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: House_B_Base_2
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 69
+        width: 44
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e97f977670e48a70800000000000000
+      internalID: 8828427968970717664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: House_B_Base_3
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 52
+        width: 87
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eabaf48d3608c8e70800000000000000
+      internalID: 9118804511837629358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: House_B_Base_4
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 2
+        width: 98
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8967782867066190800000000000000
+      internalID: -7969674346648606323
       vertices: []
       indices: 
       edges: []
@@ -125,7 +225,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: d046ee36ee2193c4eb81f61b0c71876e
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      House_A_0: 8842634582447638286
+      House_B_Base_0: -376281550786902895
+      House_B_Base_1: 501705913228850304
+      House_B_Base_2: 8828427968970717664
+      House_B_Base_3: 9118804511837629358
+      House_B_Base_4: -7969674346648606323
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
