@@ -20,10 +20,19 @@ public struct DialogueEvent
     public bool BlockInput;
 
     public int requiredAmountOfType;
+
+    public bool UpdateGameState;
+    public GameState NewGameState;
+
+    [Header("Effects")]
+    public bool characterShakes;
+    public float shakeDuration;
+    public float shakeStrength;
 }
 
 public class DialogueSystem : MonoBehaviour
 {
+    [SerializeField] private RectTransform dialogueParent;
     [SerializeField] private UnityEngine.UI.Image characterImage;
     [SerializeField] private float openingTransitionSpeed = 2.0f;
     [SerializeField] private TextMeshProUGUI dialogueText;
@@ -35,9 +44,16 @@ public class DialogueSystem : MonoBehaviour
     private bool hasDialogue = false;
     private bool inOpeningAnimation = false;
 
+    // Shaking //
+    private bool isShaking = false;
+    private Vector3 characterStartAnchoredPosition;
+    private float shakeDuration = 0.0f;
+    private float shakeStrength = 0.0f;
+
     private float startY = -160.0f; // offscreen
     private float targetY = 18.0f;
     private float openingTimer = 0.0f;
+
 
     public static DialogueSystem Instance;
     private void Awake()
@@ -50,7 +66,8 @@ public class DialogueSystem : MonoBehaviour
 
     private void Start()
     {
-        characterImage.gameObject.SetActive(false);
+        characterStartAnchoredPosition = characterImage.rectTransform.anchoredPosition;
+        dialogueParent.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -58,6 +75,7 @@ public class DialogueSystem : MonoBehaviour
         if (hasDialogue)
         {
             OpenDialoge();
+            ProcessShake();
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -76,11 +94,18 @@ public class DialogueSystem : MonoBehaviour
         inOpeningAnimation = true;
         openingTimer = 0.0f;
 
+        if(dialogueEvent.characterShakes)
+        {
+            isShaking = true;
+            shakeStrength = dialogueEvent.shakeStrength;
+            shakeDuration = dialogueEvent.shakeDuration;
+        }
+
         dialogueText.text = dialogueEvent.Dialogue;
         DialogueHasMouseFocus = dialogueEvent.BlockInput;
 
         characterImage.sprite = myEmotes[(int)dialogueEvent.EmoteToUse];
-        characterImage.gameObject.SetActive(true);
+        dialogueParent.gameObject.SetActive(true);
     }
 
     public void OpenDialoge()
@@ -91,7 +116,7 @@ public class DialogueSystem : MonoBehaviour
 
             Vector3 currentChatPosition = characterImage.rectTransform.anchoredPosition;
             currentChatPosition.y = currentY;
-            characterImage.rectTransform.anchoredPosition = currentChatPosition;
+            dialogueParent.anchoredPosition = currentChatPosition;
 
             openingTimer += openingTransitionSpeed * Time.deltaTime;
 
@@ -99,7 +124,7 @@ public class DialogueSystem : MonoBehaviour
             if (openingTimer > 1.0f || Input.GetKeyDown(KeyCode.Space))
             {
                 currentChatPosition.y = targetY;
-                characterImage.rectTransform.anchoredPosition = currentChatPosition;
+                dialogueParent.anchoredPosition = currentChatPosition;
 
                 inOpeningAnimation = false;
             }
@@ -116,7 +141,7 @@ public class DialogueSystem : MonoBehaviour
         hasDialogue = false;
         DialogueHasMouseFocus = false;
 
-        characterImage.gameObject.SetActive(false);
+        dialogueParent.gameObject.SetActive(false);
     }
 
     private float EaseIn(float x)
@@ -125,5 +150,25 @@ public class DialogueSystem : MonoBehaviour
         const float c3 = c1 +1.0f;
 
         return 1.0f + c3 * Mathf.Pow(x - 1.0f, 3.0f) + c1 * Mathf.Pow(x - 1.0f, 2.0f);
+    }
+
+    private void ProcessShake()
+    {
+        if(isShaking && !inOpeningAnimation)
+        {
+            Vector3 shakePosition = characterStartAnchoredPosition;
+            Vector3 shakeDirection = new Vector3(UnityEngine.Random.Range(-1.0f, 1.0f), UnityEngine.Random.Range(-1.0f, 1.0f), 0.0f);
+            shakeDirection = shakeDirection.normalized;
+            shakePosition += shakeDirection * (shakeStrength * UnityEngine.Random.Range(0.25f, 1.0f));
+
+            characterImage.rectTransform.anchoredPosition = shakePosition;
+
+            shakeDuration -= Time.deltaTime;
+            if (shakeDuration <= 0.0f)
+            {
+                isShaking = false;
+                characterImage.rectTransform.anchoredPosition = characterStartAnchoredPosition;
+            }
+        }
     }
 }

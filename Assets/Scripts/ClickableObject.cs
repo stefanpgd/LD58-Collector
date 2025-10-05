@@ -125,6 +125,8 @@ public class ClickableObject : MonoBehaviour
     void CollectLogic()
     {
         isCollected = true;
+        spriteRenderer.sortingOrder = 99;
+
         ResourceManager.Instance.AddResource(data.Type);
 
         if (data.collectSFXs.Count > 0)
@@ -139,6 +141,11 @@ public class ClickableObject : MonoBehaviour
                 if (ResourceManager.Instance.GetResource(data.Type) == dialogue.requiredAmountOfType)
                 {
                     DialogueSystem.Instance.StartDialogue(dialogue);
+
+                    if(dialogue.UpdateGameState)
+                    {
+                        GameManager.Instance.ProcessGameState(dialogue.NewGameState);
+                    }
                 }
             }
         }
