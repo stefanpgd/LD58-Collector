@@ -28,68 +28,69 @@ public class ScreenMovement : MonoBehaviour
 
     void Awake()
     {
-        screenResolution = new Vector2(22, 12);    
+        screenResolution = new Vector2(22, 12);
     }
 
     void Update()
+    {
+        if (DialogueSystem.Instance.DialogueHasMouseFocus)
         {
+            return;
+        }
 
-            // get the correct mouseposition                        
-            Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3 mousePosition = new Vector3(mouseWorldPosition.x, mouseWorldPosition.y, 0);    
-            float multiplier = cameraSpeed * Time.deltaTime;
+        // get the correct mouseposition                        
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 mousePosition = new Vector3(mouseWorldPosition.x, mouseWorldPosition.y, 0);
+        float multiplier = cameraSpeed * Time.deltaTime;
 
-            
-            CalculateCameraPosX(mousePosition, multiplier);
-            CalculateCameraPosY(mousePosition, multiplier);
-        
 
-        } 
+        CalculateCameraPosX(mousePosition, multiplier);
+        CalculateCameraPosY(mousePosition, multiplier);
+    }
 
     void CalculateCameraPosX(Vector3 mousePosition, float multiplier)
+    {
+        newCameraPosX = cam.transform.position.x;
+
+        if (mousePosition.x >= cam.transform.position.x + screenResolution.x - edgeRangeForMovement && cam.transform.position.x <= XBoundaryRight)
         {
-            newCameraPosX = cam.transform.position.x;
-
-            if (mousePosition.x >= cam.transform.position.x + screenResolution.x - edgeRangeForMovement && cam.transform.position.x <= XBoundaryRight)
-            {
-                newCameraPosX = cam.transform.position.x + 1 * multiplier;
-                rightArrowAnim.SetBool("IsMovingRight", true);
-            }
-            else if (mousePosition.x <= cam.transform.position.x - screenResolution.x + edgeRangeForMovement && cam.transform.position.x >= XBoundaryLeft)
-            {
-                newCameraPosX = cam.transform.position.x - 1 * multiplier;
-                leftArrowAnim.SetBool("IsMovingLeft", true);
-            }
-            else
-            {
-                rightArrowAnim.SetBool("IsMovingRight", false);
-                leftArrowAnim.SetBool("IsMovingLeft", false);
-            }
-
-            cam.transform.position = new Vector3(newCameraPosX, cam.transform.position.y, cam.transform.position.z);
+            newCameraPosX = cam.transform.position.x + 1 * multiplier;
+            rightArrowAnim.SetBool("IsMovingRight", true);
+        }
+        else if (mousePosition.x <= cam.transform.position.x - screenResolution.x + edgeRangeForMovement && cam.transform.position.x >= XBoundaryLeft)
+        {
+            newCameraPosX = cam.transform.position.x - 1 * multiplier;
+            leftArrowAnim.SetBool("IsMovingLeft", true);
+        }
+        else
+        {
+            rightArrowAnim.SetBool("IsMovingRight", false);
+            leftArrowAnim.SetBool("IsMovingLeft", false);
         }
 
-        void CalculateCameraPosY(Vector3 mousePosition, float multiplier)
+        cam.transform.position = new Vector3(newCameraPosX, cam.transform.position.y, cam.transform.position.z);
+    }
+
+    void CalculateCameraPosY(Vector3 mousePosition, float multiplier)
+    {
+        newCameraPosY = cam.transform.position.y;
+
+        if (mousePosition.y >= cam.transform.position.y + screenResolution.y - edgeRangeForMovement && cam.transform.position.y <= YBoundaryUp)
         {
-            newCameraPosY = cam.transform.position.y;
-
-            if (mousePosition.y >= cam.transform.position.y + screenResolution.y - edgeRangeForMovement && cam.transform.position.y <= YBoundaryUp)
-            {
-                newCameraPosY = cam.transform.position.y + 1 * multiplier;
-                upArrowAnim.SetBool("IsMovingUp", true);
-            }
-            else if (mousePosition.y <= cam.transform.position.y - screenResolution.y + edgeRangeForMovement && cam.transform.position.y >= YBoundaryDown)
-            {
-                newCameraPosY = cam.transform.position.y - 1 * multiplier;
-                downArrowAnim.SetBool("IsMovingDown", true);
-            }
-            else
-            {
-                upArrowAnim.SetBool("IsMovingUp", false);
-                downArrowAnim.SetBool("IsMovingDown", false);
-            }
-
-            cam.transform.position = new Vector3(cam.transform.position.x, newCameraPosY, cam.transform.position.z);
+            newCameraPosY = cam.transform.position.y + 1 * multiplier;
+            upArrowAnim.SetBool("IsMovingUp", true);
         }
-    
+        else if (mousePosition.y <= cam.transform.position.y - screenResolution.y + edgeRangeForMovement && cam.transform.position.y >= YBoundaryDown)
+        {
+            newCameraPosY = cam.transform.position.y - 1 * multiplier;
+            downArrowAnim.SetBool("IsMovingDown", true);
+        }
+        else
+        {
+            upArrowAnim.SetBool("IsMovingUp", false);
+            downArrowAnim.SetBool("IsMovingDown", false);
+        }
+
+        cam.transform.position = new Vector3(cam.transform.position.x, newCameraPosY, cam.transform.position.z);
+    }
 }

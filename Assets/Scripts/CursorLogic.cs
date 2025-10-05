@@ -30,6 +30,17 @@ public class CursorLogic : MonoBehaviour
 
     void Update()
     {
+        // Check whether dialogue is playing with Cursor focus, if so hide sprite & ignore logic
+        if(DialogueSystem.Instance.DialogueHasMouseFocus)
+        {
+            cursorSpriteObject.enabled = false;
+            return;
+        }
+        else
+        {
+            cursorSpriteObject.enabled = true;
+        }
+
         // calc mouseposition in world coordinates
         Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3 mousePosition = new Vector3(mouseWorldPosition.x, mouseWorldPosition.y, 0);
