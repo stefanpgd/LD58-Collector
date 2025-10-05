@@ -78,15 +78,18 @@ public class DialogueSystem : MonoBehaviour
         {
             Instance = this;
         }
+
+        dialogueStartAnchoredPosition = dialogueParent.anchoredPosition;
+        characterStartAnchoredPosition = characterImage.rectTransform.anchoredPosition;
+        dialogueParent.gameObject.SetActive(false);
     }
 
     private void Start()
     {
-        dialogueStartAnchoredPosition = dialogueParent.anchoredPosition;
-        characterStartAnchoredPosition = characterImage.rectTransform.anchoredPosition;
-
-        DialogueHasMouseFocus = true;
-        dialogueParent.gameObject.SetActive(false);
+        if (GameManager.Instance.currentGameState == GameState.GameStart)
+        {
+            DialogueHasMouseFocus = true;
+        }
     }
 
     private void Update()

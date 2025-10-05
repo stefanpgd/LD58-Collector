@@ -14,7 +14,7 @@ public class ClickableObject : MonoBehaviour
     private Vector3 startPosition;
     private int currentHealth;
 
-    private bool isCollected = false;
+    public bool isCollected = false;
     private float timeUntilRemove = 5.0f;
     private Vector3 moveVelocity = Vector3.zero;
 

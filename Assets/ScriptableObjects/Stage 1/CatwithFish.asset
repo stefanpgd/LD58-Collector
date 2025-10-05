@@ -10,50 +10,62 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6862a9ce943af2f40a218a2e6e15bd8e, type: 3}
-  m_Name: Cat
+  m_Name: CatwithFish
   m_EditorClassIdentifier: 
-  Type: 0
+  Type: 1
   DefaultSprite: {fileID: 8308148680191640472, guid: bfba947d616015c4e9649d4717356a50, type: 3}
   ClickedSprite: {fileID: 2322389659712592154, guid: bfba947d616015c4e9649d4717356a50, type: 3}
-  ClickHealth: 3
-  requiredClickStrength: 0
+  ClickHealth: 5
+  requiredClickStrength: 4
   DialogueEvents:
-  - Dialogue: 'Wow! You actually managed to find Mikkel! '
+  - Dialogue: You actually managed to find all my cats! I deserve a reward for choosing
+      the right person for the job.
     EmoteToUse: 0
     BlockInput: 1
     requiredAmountOfType: 1
     UpdateGameState: 0
     NewGameState: 0
     characterShakes: 1
-    shakeDuration: 0.25
+    shakeDuration: 0.35
     shakeStrength: 6
-  - Dialogue: Okay, if I remembered correctly there should be four more left.
+  - Dialogue: Wait... my cat Balthasar had a fish in its mouth...
     EmoteToUse: 1
     BlockInput: 1
     requiredAmountOfType: 1
     UpdateGameState: 0
     NewGameState: 0
-    characterShakes: 0
-    shakeDuration: 0
-    shakeStrength: 0
-  - Dialogue: Let's see if my choice to pick you will pay off.
-    EmoteToUse: 3
+    characterShakes: 1
+    shakeDuration: 0.25
+    shakeStrength: 4
+  - Dialogue: 'The spell I casted on you should''ve just been strong enough to pick
+      up cats... '
+    EmoteToUse: 5
     BlockInput: 1
     requiredAmountOfType: 1
-    UpdateGameState: 1
-    NewGameState: 1
-    characterShakes: 0
-    shakeDuration: 0
-    shakeStrength: 0
-  - Dialogue: Just one more to go! He should be near the pond.
+    UpdateGameState: 0
+    NewGameState: 0
+    characterShakes: 1
+    shakeDuration: 0.25
+    shakeStrength: 4
+  - Dialogue: 'No it can''t be, I don''t make mistakes! But maybe .. just maybe.. '
+    EmoteToUse: 4
+    BlockInput: 1
+    requiredAmountOfType: 1
+    UpdateGameState: 0
+    NewGameState: 0
+    characterShakes: 1
+    shakeDuration: 0.25
+    shakeStrength: 4
+  - Dialogue: It won't work, but could you try collecting one of those barrels in
+      the village?
     EmoteToUse: 0
     BlockInput: 1
-    requiredAmountOfType: 4
-    UpdateGameState: 1
-    NewGameState: 2
+    requiredAmountOfType: 1
+    UpdateGameState: 0
+    NewGameState: 0
     characterShakes: 0
-    shakeDuration: 0
-    shakeStrength: 0
+    shakeDuration: 0.25
+    shakeStrength: 4
   UseClickSprite: 1
   ShakeOnClick: 1
   shakeStrength: 0.1

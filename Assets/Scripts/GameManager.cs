@@ -24,10 +24,12 @@ public class GameManager : MonoBehaviour
     /// This should manage how the player enters onboarding -> Stage 1..2..3 so forth
     /// </summary>
     public static GameManager Instance;
-    private GameState currentGameState;
+    public GameState currentGameState { get; private set; }
 
     [SerializeField] private float gameStartTimer = 3.0f;
     [SerializeField] public List<DialogueEvent> onboardingDialogue = new List<DialogueEvent>();
+    [SerializeField] private bool SkipIntro = false;
+    [SerializeField] private GameObject catInPond;
 
     private void Awake()
     {
@@ -36,7 +38,16 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
 
-        currentGameState = GameState.GameStart;
+        if(SkipIntro)
+        {
+            currentGameState = GameState.CollectFourCats;
+        }
+        else
+        {
+            currentGameState = GameState.GameStart;
+        }
+
+        catInPond.SetActive(false);
     }
 
     private void Update()
@@ -56,7 +67,6 @@ public class GameManager : MonoBehaviour
                     currentGameState = GameState.CollectFourCats;
                 }
                 break;
-
             default:
 
                 break;
@@ -75,6 +85,7 @@ public class GameManager : MonoBehaviour
         switch (state)
         {
             case GameState.SpawnCatInPond:
+                    catInPond.SetActive(true);
                 break;
 
             default: Debug.LogError("GameState not set up yet.."); break;

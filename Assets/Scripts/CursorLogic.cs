@@ -25,7 +25,6 @@ public class CursorLogic : MonoBehaviour
         Cursor.visible = false;
         cursorSpriteObject.sprite = cursorSprites[0];
         currentClickStrength = 0;
-
     }
 
     void Update()

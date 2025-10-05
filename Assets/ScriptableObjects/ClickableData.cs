@@ -4,6 +4,7 @@ using UnityEngine;
 public enum ClickableType
 {
     Cat,
+    CatWithFish,
     Environment,
     UI,
     // so forth //
