@@ -1,34 +1,43 @@
 fileFormatVersion: 2
-guid: 5bb611e4e74e07344a15245eeac9ff86
+guid: de49fb58b4102cc4e982e602175cf7e9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3595613106452547147
-    second: DialogueUI_CharacterSprites_0
+      213: 6448621876778120975
+    second: DialogueUI_CharacterSprites_NoHat_0
   - first:
-      213: -1721143010441256317
-    second: DialogueUI_CharacterSprites_1
+      213: 8617699139976068166
+    second: DialogueUI_CharacterSprites_NoHat_1
   - first:
-      213: 3223204114407183890
-    second: DialogueUI_CharacterSprites_2
+      213: 575383699968271981
+    second: DialogueUI_CharacterSprites_NoHat_2
   - first:
-      213: -139896354715953861
-    second: DialogueUI_CharacterSprites_3
+      213: 4892007701323330558
+    second: DialogueUI_CharacterSprites_NoHat_3
   - first:
-      213: 9079912091664169142
-    second: DialogueUI_CharacterSprites_4
+      213: 8882205251745224346
+    second: DialogueUI_CharacterSprites_NoHat_4
   - first:
-      213: -510205152184341651
-    second: DialogueUI_CharacterSprites_5
+      213: -2638371456403843412
+    second: DialogueUI_CharacterSprites_NoHat_5
   - first:
-      213: -601166468944673997
-    second: DialogueUI_CharacterSprites_6
+      213: -8147225261860575943
+    second: DialogueUI_CharacterSprites_NoHat_6
   - first:
-      213: -5777721521283903887
-    second: DialogueUI_CharacterSprites_7
+      213: 8493366791322893706
+    second: DialogueUI_CharacterSprites_NoHat_7
   - first:
-      213: 2577860210990225880
-    second: DialogueUI_CharacterSprites_8
+      213: 6514983898669699631
+    second: DialogueUI_CharacterSprites_NoHat_8
+  - first:
+      213: -4417728719469936209
+    second: DialogueUI_CharacterSprites_NoHat_9
+  - first:
+      213: -6072762119118409910
+    second: DialogueUI_CharacterSprites_NoHat_10
+  - first:
+      213: -3027508064517836157
+    second: DialogueUI_CharacterSprites_NoHat_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -61,7 +70,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,10 +81,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -99,7 +108,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -120,30 +129,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DialogueUI_CharacterSprites_0
+      name: DialogueUI_CharacterSprites_NoHat_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 192
-        width: 96
-        height: 96
+        x: 17
+        y: 207
+        width: 60
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +148,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b46c7d7e11f26e130800000000000000
-      internalID: 3595613106452547147
+      spriteID: f073c204e6b1e7950800000000000000
+      internalID: 6448621876778120975
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DialogueUI_CharacterSprites_1
+      name: DialogueUI_CharacterSprites_NoHat_1
       rect:
         serializedVersion: 2
-        x: 112
-        y: 192
-        width: 96
-        height: 96
+        x: 114
+        y: 207
+        width: 60
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +170,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 382a00f0d854d18e0800000000000000
-      internalID: -1721143010441256317
+      spriteID: 64c767395b7389770800000000000000
+      internalID: 8617699139976068166
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DialogueUI_CharacterSprites_2
+      name: DialogueUI_CharacterSprites_NoHat_2
       rect:
         serializedVersion: 2
-        x: 208
-        y: 192
-        width: 96
-        height: 96
+        x: 210
+        y: 207
+        width: 60
+        height: 59
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 21651d5901f1bbc20800000000000000
-      internalID: 3223204114407183890
+      spriteID: d66a8263d6c2cf700800000000000000
+      internalID: 575383699968271981
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DialogueUI_CharacterSprites_3
+      name: DialogueUI_CharacterSprites_NoHat_3
       rect:
         serializedVersion: 2
-        x: 304
-        y: 192
-        width: 96
-        height: 96
+        x: 306
+        y: 207
+        width: 60
+        height: 68
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,20 +214,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b3598cfa10dfe0ef0800000000000000
-      internalID: -139896354715953861
+      spriteID: ef33adbd517e3e340800000000000000
+      internalID: 4892007701323330558
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DialogueUI_CharacterSprites_4
+      name: DialogueUI_CharacterSprites_NoHat_4
       rect:
         serializedVersion: 2
-        x: 16
-        y: 96
-        width: 96
-        height: 96
+        x: 18
+        y: 111
+        width: 60
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,20 +236,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6b8ba6f90f3520e70800000000000000
-      internalID: 9079912091664169142
+      spriteID: a961264dd9ee34b70800000000000000
+      internalID: 8882205251745224346
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DialogueUI_CharacterSprites_5
+      name: DialogueUI_CharacterSprites_NoHat_5
       rect:
         serializedVersion: 2
-        x: 112
-        y: 96
-        width: 96
-        height: 96
+        x: 113
+        y: 111
+        width: 60
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -262,20 +258,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d6b6a750e136be8f0800000000000000
-      internalID: -510205152184341651
+      spriteID: ca6d48b932f926bd0800000000000000
+      internalID: -2638371456403843412
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DialogueUI_CharacterSprites_6
+      name: DialogueUI_CharacterSprites_NoHat_6
       rect:
         serializedVersion: 2
-        x: 208
-        y: 96
-        width: 96
-        height: 96
+        x: 210
+        y: 111
+        width: 74
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,20 +280,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3334da7184a38a7f0800000000000000
-      internalID: -601166468944673997
+      spriteID: 93526b94acd3fee80800000000000000
+      internalID: -8147225261860575943
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DialogueUI_CharacterSprites_7
+      name: DialogueUI_CharacterSprites_NoHat_7
       rect:
         serializedVersion: 2
-        x: 304
-        y: 96
-        width: 96
-        height: 96
+        x: 306
+        y: 111
+        width: 60
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -306,96 +302,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 17e4eb853e861dfa0800000000000000
-      internalID: -5777721521283903887
+      spriteID: a8d76efc8108ed570800000000000000
+      internalID: 8493366791322893706
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DialogueUI_CharacterSprites_8
+      name: DialogueUI_CharacterSprites_NoHat_8
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
-        width: 96
-        height: 96
+        x: 18
+        y: 15
+        width: 60
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 9cf972dd462cf0140bcdacd2a2f8fea1
-      internalID: -351980701
+      spriteID: f22d895865fd96a50800000000000000
+      internalID: 6514983898669699631
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DialogueUI_CharacterSprites_9
+      name: DialogueUI_CharacterSprites_NoHat_9
       rect:
         serializedVersion: 2
-        x: 112
-        y: 0
-        width: 96
-        height: 96
+        x: 114
+        y: 15
+        width: 60
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 2ad533fa306f6a24c8a820ce9c75f0ef
-      internalID: 209408671
+      spriteID: fa104f1c22311b2c0800000000000000
+      internalID: -4417728719469936209
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DialogueUI_CharacterSprites_10
+      name: DialogueUI_CharacterSprites_NoHat_10
       rect:
         serializedVersion: 2
-        x: 208
-        y: 0
-        width: 96
-        height: 96
+        x: 210
+        y: 15
+        width: 60
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 496d24ea1f2d014449f38b3e5e8ba88e
-      internalID: 50972953
+      spriteID: a4faf7c070739bba0800000000000000
+      internalID: -6072762119118409910
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DialogueUI_CharacterSprites_11
+      name: DialogueUI_CharacterSprites_NoHat_11
       rect:
         serializedVersion: 2
-        x: 304
-        y: 0
-        width: 96
-        height: 96
+        x: 307
+        y: 15
+        width: 60
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b151bf46950187948951a3e647f49449
-      internalID: 941611055
+      spriteID: 382b8cba4712cf5d0800000000000000
+      internalID: -3027508064517836157
       vertices: []
       indices: 
       edges: []
@@ -404,7 +400,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c90c1b272a9cacd42ad6c3aa0f327fd9
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -413,19 +409,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      DialogueUI_CharacterSprites_0: 3595613106452547147
-      DialogueUI_CharacterSprites_1: -1721143010441256317
-      DialogueUI_CharacterSprites_10: 50972953
-      DialogueUI_CharacterSprites_11: 941611055
-      DialogueUI_CharacterSprites_2: 3223204114407183890
-      DialogueUI_CharacterSprites_3: -139896354715953861
-      DialogueUI_CharacterSprites_4: 9079912091664169142
-      DialogueUI_CharacterSprites_5: -510205152184341651
-      DialogueUI_CharacterSprites_6: -601166468944673997
-      DialogueUI_CharacterSprites_7: -5777721521283903887
-      DialogueUI_CharacterSprites_8: -351980701
-      DialogueUI_CharacterSprites_9: 209408671
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

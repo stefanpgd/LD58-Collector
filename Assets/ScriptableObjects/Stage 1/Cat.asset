@@ -20,7 +20,7 @@ MonoBehaviour:
   DialogueEvents:
   - Dialogue: 'Wow! You actually managed to find Mikkel! '
     EmoteToUse: 0
-    BlockInput: 0
+    BlockInput: 1
     requiredAmountOfType: 1
     UpdateGameState: 0
     NewGameState: 0
@@ -29,7 +29,7 @@ MonoBehaviour:
     shakeStrength: 6
   - Dialogue: Okay, if I remembered correctly there should be four more left.
     EmoteToUse: 1
-    BlockInput: 0
+    BlockInput: 1
     requiredAmountOfType: 1
     UpdateGameState: 0
     NewGameState: 0
@@ -38,7 +38,7 @@ MonoBehaviour:
     shakeStrength: 0
   - Dialogue: I now have full confidence you can get this done!
     EmoteToUse: 3
-    BlockInput: 0
+    BlockInput: 1
     requiredAmountOfType: 1
     UpdateGameState: 1
     NewGameState: 1
@@ -47,7 +47,7 @@ MonoBehaviour:
     shakeStrength: 0
   - Dialogue: Just one more to go! He should be near the pond.
     EmoteToUse: 0
-    BlockInput: 0
+    BlockInput: 1
     requiredAmountOfType: 4
     UpdateGameState: 1
     NewGameState: 1
